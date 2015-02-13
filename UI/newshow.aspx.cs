@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
 using Common;
+using MySql.Data.MySqlClient;
 public partial class cjwt : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -18,7 +19,7 @@ public partial class cjwt : System.Web.UI.Page
         Model.News mn = new Model.News();
         BLL.News bn = new BLL.News();
         mn.ID = Convert.ToInt32(Request.QueryString["uid"]);
-        SqlDataReader sdr = bn.datareader(mn);
+        MySqlDataReader sdr = bn.datareader(mn);
         if (sdr.Read())
         {
             Label1.Text = sdr["_from"].ToString();

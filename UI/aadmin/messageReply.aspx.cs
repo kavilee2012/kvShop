@@ -13,6 +13,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
 using BLL;
 using Model;
+using MySql.Data.MySqlClient;
 public partial class admin_messageReply : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -23,7 +24,7 @@ public partial class admin_messageReply : System.Web.UI.Page
         mes.id = id;
 
         BLLmessage bllmessage = new BLLmessage();
-        SqlDataReader sdr = bllmessage.readmessage(mes);
+        MySqlDataReader sdr = bllmessage.readmessage(mes);
         if (sdr.Read())
         {
             Label1.Text = sdr["_title"].ToString();

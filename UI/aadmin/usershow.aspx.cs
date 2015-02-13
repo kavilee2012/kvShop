@@ -9,6 +9,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 public partial class usershow : System.Web.UI.Page
 {
@@ -22,7 +23,7 @@ public partial class usershow : System.Web.UI.Page
         Model.user mo = new Model.user();
         mo.userid = i;
         BLL.adminuser bll = new BLL.adminuser();
-        SqlDataReader dr = bll.drus(mo);
+        MySqlDataReader dr = bll.drus(mo);
         if (dr.Read())
         {
             TextBox1.Text = dr["_userid"].ToString();

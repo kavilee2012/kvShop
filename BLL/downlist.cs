@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
 using System.Data;
+using MySqlDAL;
+using MySql.Data.MySqlClient;
 
 namespace BLL
 {
@@ -11,28 +13,28 @@ namespace BLL
     {
        public int downloadadd(Model.downlist md)
        {
-           DAL.downlist dd = new DAL.downlist();
+           downlistDAL dd = new downlistDAL();
            return dd.downloadadd(md);
        }
        public int update(Model.downlist md)
        {
-           DAL.downlist dd = new DAL.downlist();
+           downlistDAL dd = new downlistDAL();
            return dd.update(md);
        }
-       public SqlDataReader datareader(Model.downlist md)
+       public MySqlDataReader datareader(Model.downlist md)
        {
-           DAL.downlist dd=new DAL.downlist();
+           downlistDAL dd=new downlistDAL();
            return dd.datareader(md);
        }
        public int _delete(Model.downlist md)
        {
-           DAL.downlist dd = new DAL.downlist();
+           downlistDAL dd = new downlistDAL();
            return dd._delete(md);
 
        }
        public int click(Model.downlist md)
        {
-           DAL.downlist dd = new DAL.downlist();
+           downlistDAL dd = new downlistDAL();
            return dd.click(md);
        }
     }

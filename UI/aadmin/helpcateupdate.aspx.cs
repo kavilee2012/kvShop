@@ -11,6 +11,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 public partial class admin_aa : System.Web.UI.Page
 {
    protected void Page_Load(object sender, EventArgs e)
@@ -27,7 +28,7 @@ public partial class admin_aa : System.Web.UI.Page
         BLL.Helpcate bh = new BLL.Helpcate();
 
 
-        SqlDataReader dr = bh.sqldatareader(mh);
+        MySqlDataReader dr = bh.sqlDataReader(mh);
         if (dr.Read())
         {
             Label1.Text = dr["_cateid"].ToString();

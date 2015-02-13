@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
 using System.IO;
+using MySql.Data.MySqlClient;
 public partial class downselect : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -77,7 +78,7 @@ public partial class downselect : System.Web.UI.Page
             {
                 md.id = Convert.ToInt32(GridView1.DataKeys[i].Value);
 
-                SqlDataReader sdr = bd.datareader(md);
+                MySqlDataReader sdr = bd.datareader(md);
                 if (sdr.Read())
                 {
                     str = sdr["_uploadurl"].ToString();

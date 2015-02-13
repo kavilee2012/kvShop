@@ -9,6 +9,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 public partial class ProInfo : System.Web.UI.Page
 {
@@ -33,7 +34,7 @@ public partial class ProInfo : System.Web.UI.Page
             
 
             BLL.product prob = new BLL.product();
-            SqlDataReader dr_pro = prob.selectupdate(u_id);
+            MySqlDataReader dr_pro = prob.selectupdate(u_id);
              dr_pro.Read();
              market.Text = Math.Round(Convert.ToDecimal(dr_pro["_marketprice"].ToString()), 2).ToString();
              local.Text = Math.Round(Convert.ToDecimal(dr_pro["_localprice"].ToString()), 2).ToString();
@@ -94,7 +95,7 @@ public partial class ProInfo : System.Web.UI.Page
         
         siz(Convert.ToString(e.CommandArgument));
         BLL.proimage myb = new BLL.proimage();
-        SqlDataReader dr_proimage = myb.image_update(Convert.ToString(e.CommandArgument));
+        MySqlDataReader dr_proimage = myb.image_update(Convert.ToString(e.CommandArgument));
          dr_proimage.Read();
          Image_1.ImageUrl = dr_proimage["_imageurl"].ToString();
          im_url = Image_1.ImageUrl;
@@ -147,7 +148,7 @@ public partial class ProInfo : System.Web.UI.Page
             Model.collect modc = new Model.collect();
             modc.proid = Convert.ToInt32(uid.Text);
             BLL.collect blloc = new BLL.collect();
-            SqlDataReader dr = blloc.drsco(modc);
+            MySqlDataReader dr = blloc.drsco(modc);
             if (dr.Read())
             {
                 Common.MessageAlert.Alert(Page, "该产品您已收藏了！");
@@ -193,7 +194,7 @@ public partial class ProInfo : System.Web.UI.Page
             Model.product mypro = new Model.product();
             mypro.id = Convert.ToInt32(Request.QueryString["uid"].ToString());
             BLL.BLLshoplist blll = new BLL.BLLshoplist();
-            SqlDataReader dr = blll.readpro(mypro);
+            MySqlDataReader dr = blll.readpro(mypro);
             DataTable dt;
             if (Session["dt"] == null)
             {

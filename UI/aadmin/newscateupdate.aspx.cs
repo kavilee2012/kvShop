@@ -11,6 +11,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 public partial class admin_aa : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -20,7 +21,7 @@ public partial class admin_aa : System.Web.UI.Page
             Model.Newscate mn = new Model.Newscate();
             mn.ID = Convert.ToInt32(Request.QueryString["uid"]);
             BLL.Newscate bn = new BLL.Newscate();
-            SqlDataReader sdr = bn.sqldatareader(mn);
+            MySqlDataReader sdr = bn.sqldatareader(mn);
             if (sdr.Read())
             {
                 Label1.Text = sdr["_cateid"].ToString();

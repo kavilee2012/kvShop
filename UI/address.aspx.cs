@@ -9,6 +9,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 public partial class address : System.Web.UI.Page
 {
@@ -33,7 +34,7 @@ public partial class address : System.Web.UI.Page
         Model.address moa = new Model.address();
         moa.userid = Convert.ToInt32(Session["_userid"]);
         BLL.daladdress blla = new BLL.daladdress();
-        SqlDataReader dr = blla.drad(moa);
+        MySqlDataReader dr = blla.drad(moa);
         if (dr!= null)
         {
             if (dr.Read())
@@ -55,7 +56,7 @@ public partial class address : System.Web.UI.Page
         mode.userid = Convert.ToInt32(Session["_userid"]);
 
         BLL.daladdress blla = new BLL.daladdress();
-        SqlDataReader dr = blla.dra(mode);
+        MySqlDataReader dr = blla.dra(mode);
         if (dr.Read())
         {
             Model.address mod = new Model.address();

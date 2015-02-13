@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
 using System.IO;
+using MySql.Data.MySqlClient;
 public partial class admin_downloadupdate : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -24,7 +25,7 @@ public partial class admin_downloadupdate : System.Web.UI.Page
         Model.downlist md  = new Model.downlist();
         md.id = Convert.ToInt32(Request.QueryString["uid"]);
         BLL.downlist bd = new BLL.downlist();
-        SqlDataReader sdr = bd.datareader(md);
+        MySqlDataReader sdr = bd.datareader(md);
         if (sdr.Read())
         {
             name.Text= sdr["_title"].ToString();

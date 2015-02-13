@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
 using System.Data;
+using MySqlDAL;
+using MySql.Data.MySqlClient;
 
 namespace BLL
 {
@@ -11,26 +13,26 @@ namespace BLL
     {
         public int insert(Model.Newscate mn)
         {
-            DAL.Newscate dn = new DAL.Newscate();
+            NewscateDAL dn = new NewscateDAL();
             int result = dn.insert(mn);
             return result;
         }
-        public SqlDataReader sqldatareader(Model.Newscate mn)
+        public MySqlDataReader sqldatareader(Model.Newscate mn)
         {
 
-            DAL.Newscate dn = new DAL.Newscate();
-            SqlDataReader sdr = dn.sqldatareader(mn);
+            NewscateDAL dn = new NewscateDAL();
+            MySqlDataReader sdr = dn.sqldatareader(mn);
             return sdr;
         }
         public int update(Model.Newscate mn)
         {
-            DAL.Newscate dn = new DAL.Newscate();
+            NewscateDAL dn = new NewscateDAL();
             int result = dn.update(mn);
             return result;
         }
         public int _delete(Model.Newscate mn)
         {
-            DAL.Newscate dn = new DAL.Newscate();
+            NewscateDAL dn = new NewscateDAL();
             int result = dn._delete(mn);
             return result;
         }

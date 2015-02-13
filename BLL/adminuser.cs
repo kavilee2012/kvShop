@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using MySqlDAL;
+using MySql.Data.MySqlClient;
 
 namespace BLL
 {
@@ -12,32 +14,32 @@ namespace BLL
         public DataSet dsus(int a, int b, string c)
 
         {
-            DAL.adminuser dalad = new DAL.adminuser();
+            adminuserDAL dalad = new adminuserDAL();
             return dalad.dsuser(a,b,c);
         }
         public int count()
         {
-            DAL.adminuser dal = new DAL.adminuser();
+            adminuserDAL dal = new adminuserDAL();
             return dal.count();
         }
         public int dele(Model.user aa)
         {
-            DAL.adminuser da = new DAL.adminuser();
+            adminuserDAL da = new adminuserDAL();
             return da.dele(aa);
         }
         public int coun(Model.user aa)
         {
-            DAL.adminuser das = new DAL.adminuser();
+            adminuserDAL das = new adminuserDAL();
             return das.cou(aa);
         }
         public DataSet seu(int a, int b, string c, Model.user aa)
         {
-            DAL.adminuser dad = new DAL.adminuser();
+            adminuserDAL dad = new adminuserDAL();
             return dad.dsu(a,b,c,aa);
         }
-        public SqlDataReader drus(Model.user aa)
+        public MySqlDataReader drus(Model.user aa)
         {
-            DAL.adminuser dal = new DAL.adminuser();
+            adminuserDAL dal = new adminuserDAL();
             return dal.drus(aa);
         }
     }

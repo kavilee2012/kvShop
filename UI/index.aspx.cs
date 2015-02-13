@@ -81,20 +81,20 @@ public partial class index : System.Web.UI.Page
         try
         {
             int c = 1;
-            string str = "select top 10 * from product where _ischeap=" + c + "";
-            DataSet ds = DB.dataSet(str);
+            string str = "select * from product where _ischeap=" + c + " limit 10";
+            DataSet ds = new BLL.product().getProductDS(str);
             DataList1.DataSource = ds.Tables[0];
             DataList1.DataBind();
             /*----------------- hot--------------*/
 
             string str2 = @"select * from product where _id
-                      in (select top 10 _proid from orderdetail group by _proid order by sum(_count) )";
-            DataSet ds2 = DB.dataSet(str2);
+                      in (select _proid from orderdetail group by _proid order by sum(_count) ) limit 10";
+            DataSet ds2 = new BLL.product().getProductDS(str2);
             DataList2.DataSource = ds2.Tables[0];
             DataList2.DataBind();
             /*----------------- time--------------*/
-            string str3 = "select top 10 * from product order by _id desc";
-            DataSet ds3 = DB.dataSet(str3);
+            string str3 = "select * from product order by _id desc limit 10";
+            DataSet ds3 = new BLL.product().getProductDS(str3);
             DataList3.DataSource = ds3.Tables[0];
             DataList3.DataBind();
             
@@ -108,8 +108,8 @@ public partial class index : System.Web.UI.Page
     {
 
         string sql = " select  _imageurl from  proimage where _imageid= '" + str + "' ";
-        
-        DataTable sdr = Common.DbHelperSQL.Query(sql).Tables[0];
+
+        DataTable sdr = new BLL.product().getProductDS(sql).Tables[0];
 
         if (sdr.Rows.Count > 0)
         {

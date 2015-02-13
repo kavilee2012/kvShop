@@ -5,42 +5,43 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Data;
 using Model;
-using DAL;
+using MySqlDAL;
+using MySql.Data.MySqlClient;
 namespace BLL
 {
     public class BLLmessage
     {
         public int post(message mes)
         {
-            DALmessage dalmessage = new DALmessage();
-            return dalmessage.post(mes);
+            DALmessageDAL DALmessageDAL = new DALmessageDAL();
+            return DALmessageDAL.post(mes);
         }
 
         public DataSet select(int pageindex, int pagesize, string table)
         {
-            DALmessage dalmessage = new DALmessage();
-            return dalmessage.select(pageindex ,pagesize,table);
+            DALmessageDAL DALmessageDAL = new DALmessageDAL();
+            return DALmessageDAL.select(pageindex ,pagesize,table);
         }
 
         public DataSet messelect(int pageindex, int pagesize, string table, string title)
         {
-            DALmessage dalmessage = new DALmessage();
-            return dalmessage.messelect(pageindex, pagesize, table,title);
+            DALmessageDAL DALmessageDAL = new DALmessageDAL();
+            return DALmessageDAL.messelect(pageindex, pagesize, table,title);
         
         }
 
 
         public int mes_select(string title)
         {
-            DALmessage dalmessage = new DALmessage();
-            return dalmessage.mes_select(title);
+            DALmessageDAL DALmessageDAL = new DALmessageDAL();
+            return DALmessageDAL.mes_select(title);
         }
 
 
         public int message_state()
         {
-            DALmessage dalmessage = new DALmessage();
-            return dalmessage.message_state();
+            DALmessageDAL DALmessageDAL = new DALmessageDAL();
+            return DALmessageDAL.message_state();
         }
 
 
@@ -50,48 +51,48 @@ namespace BLL
         public DataSet h_select(int pageindex, int pagesize, string table)
         {
 
-            DALmessage dalmessage = new DALmessage();
-            return dalmessage.h_select(pageindex, pagesize, table);
+            DALmessageDAL DALmessageDAL = new DALmessageDAL();
+            return DALmessageDAL.h_select(pageindex, pagesize, table);
 
         }
 
         public int messageCount()
         {
-            DALmessage dalmessage = new DALmessage();
-            return dalmessage.messageCount();
+            DALmessageDAL DALmessageDAL = new DALmessageDAL();
+            return DALmessageDAL.messageCount();
         }
 
 
 
         public int reply(message mes)
         {
-            DALmessage dalmessage = new DALmessage();
-            return dalmessage.reply(mes);
+            DALmessageDAL DALmessageDAL = new DALmessageDAL();
+            return DALmessageDAL.reply(mes);
         }
 
-        public SqlDataReader readmessage(message mes)
+        public MySqlDataReader readmessage(message mes)
         {
-            DALmessage dalmessage = new DALmessage();
-            return dalmessage.readmessage(mes);
+            DALmessageDAL DALmessageDAL = new DALmessageDAL();
+            return DALmessageDAL.readmessage(mes);
         }
 
         public int delete(message mes)
         {
-            DALmessage dalmessage = new DALmessage();
-            return dalmessage.delete(mes);
+            DALmessageDAL DALmessageDAL = new DALmessageDAL();
+            return DALmessageDAL.delete(mes);
         }
 
         public int update(message mes)
         {
-            DALmessage dalmessage = new DALmessage();
-            return dalmessage.update(mes);
+            DALmessageDAL DALmessageDAL = new DALmessageDAL();
+            return DALmessageDAL.update(mes);
 
         }
 
         public int p_update(message mes)
         {
-            DALmessage dalmessage = new DALmessage();
-            return dalmessage.p_update(mes);
+            DALmessageDAL DALmessageDAL = new DALmessageDAL();
+            return DALmessageDAL.p_update(mes);
         
         }
     }

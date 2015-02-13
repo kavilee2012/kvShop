@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using System.Text;
 using System.Data.SqlClient;
+using MySqlDAL;
 
 namespace BLL
 {
@@ -10,7 +11,7 @@ namespace BLL
     {
         public int insert(Model .admin ad)
         {
-            DAL.dalhhh dalhh = new DAL.dalhhh();
+            DALadminDAL dalhh = new DALadminDAL();
             return dalhh.hh (ad);
         }
     }

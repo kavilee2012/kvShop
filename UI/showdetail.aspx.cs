@@ -11,6 +11,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
 using Model;
 using BLL;
+using MySql.Data.MySqlClient;
 public partial class zcym : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -26,7 +27,7 @@ public partial class zcym : System.Web.UI.Page
         help.ID = _id;
 
         BLLhelp bllhelp = new BLLhelp();
-        SqlDataReader sdr = bllhelp.readinfo(help);
+        MySqlDataReader sdr = bllhelp.readinfo(help);
         if (sdr.Read())
         {
             Label1.Text = sdr["_title"].ToString();

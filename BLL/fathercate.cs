@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using MySqlDAL;
 
 namespace BLL
 {
@@ -11,22 +12,22 @@ namespace BLL
     {
        public int insert(Model.fathercate mym)
        {
-           DAL.fathercate dal = new DAL.fathercate();
+           fathercateDAL dal = new fathercateDAL();
            return dal.insert(mym);
        }
        public DataSet dataset()
        {
-           DAL.fathercate dal = new DAL.fathercate();
+           fathercateDAL dal = new fathercateDAL();
            return dal.dataset();
        }
        public int update(Model.fathercate mym)
        {
-           DAL.fathercate dal = new DAL.fathercate();
+           fathercateDAL dal = new fathercateDAL();
            return dal.update(mym);
        }
        public int delete(int f_id)
        {
-           DAL.fathercate dal = new DAL.fathercate();
+           fathercateDAL dal = new fathercateDAL();
            return dal.delete(f_id);
        }
     }

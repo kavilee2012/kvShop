@@ -11,6 +11,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 public partial class admin_product : System.Web.UI.Page
 {
@@ -25,7 +26,7 @@ public partial class admin_product : System.Web.UI.Page
             L_id.Text = Request.QueryString["id"].ToString();
             int  u_id = Convert.ToInt32( L_id.Text);
             BLL.product prob = new BLL.product();
-            SqlDataReader dr = prob.selectupdate(u_id);
+            MySqlDataReader dr = prob.selectupdate(u_id);
 
             if (dr.Read())
             {
@@ -50,7 +51,7 @@ public partial class admin_product : System.Web.UI.Page
     }
     public void msg(string msg)
     {
-        BLL.tis myb = new BLL.tis();
+        BLL.tisBLL myb = new BLL.tisBLL();
         myb.msg(Page, msg);
     }
     protected void upimage_Click(object sender, EventArgs e)

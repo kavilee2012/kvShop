@@ -9,6 +9,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 public partial class downsearch : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -75,7 +76,7 @@ public partial class downsearch : System.Web.UI.Page
         Model.downlist md = new Model.downlist();
         md.id = Convert.ToInt32(Label1.Text);
         BLL.downlist bd = new BLL.downlist();
-        SqlDataReader sdr = bd.datareader(md);
+        MySqlDataReader sdr = bd.datareader(md);
         string str = "";
         int count = 0;
         if (sdr.Read())

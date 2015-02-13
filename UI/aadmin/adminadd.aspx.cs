@@ -13,6 +13,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
 using Model;
 using BLL;
+using MySql.Data.MySqlClient;
 public partial class admin_adminadd : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -27,7 +28,7 @@ public partial class admin_adminadd : System.Web.UI.Page
             admin1.name = txt_name.Text;
 
             BLLadmin blladmin1 = new BLLadmin();
-            SqlDataReader sdr = blladmin1.checkAdmin(admin1);
+            MySqlDataReader sdr = blladmin1.checkAdmin(admin1);
             if (sdr.Read())
             {
                 Common.MessageAlert.Alert(Page, "该管理员已存在");

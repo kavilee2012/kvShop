@@ -30,7 +30,7 @@ public partial class admin_product : System.Web.UI.Page
     }
     public void msg(string msg)
     {
-        BLL.tis myb = new BLL.tis();
+        BLL.tisBLL myb = new BLL.tisBLL();
         myb.msg(Page, msg);
     }
     protected void upimage_Click(object sender, EventArgs e)

@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
 using System.Data;
+using MySql.Data.MySqlClient;
 public partial class shoplist2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -38,7 +39,7 @@ public partial class shoplist2 : System.Web.UI.Page
         Model.address myaddress = new Model.address();
         myaddress.userid  = Convert.ToInt32(Session["_userid"]);
         BLL.BLLshoplist2 blll = new BLL.BLLshoplist2();
-       SqlDataReader dr = blll.readaddress(myaddress);
+        MySqlDataReader dr = blll.readaddress(myaddress);
        if (dr.Read())
        {
            address.Text = dr["_address"].ToString();

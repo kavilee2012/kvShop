@@ -28,3 +28,8 @@ E:\KaviShop\SimpleMall\Common\bin\Debug\Common.pdb
 E:\KaviShop\SimpleMall\Common\obj\Debug\ResolveAssemblyReference.cache
 E:\KaviShop\SimpleMall\Common\obj\Debug\Common.dll
 E:\KaviShop\SimpleMall\Common\obj\Debug\Common.pdb
+E:\Test\LZC\kvShop\Common\bin\Debug\Common.dll
+E:\Test\LZC\kvShop\Common\bin\Debug\Common.pdb
+E:\Test\LZC\kvShop\Common\obj\Debug\ResolveAssemblyReference.cache
+E:\Test\LZC\kvShop\Common\obj\Debug\Common.dll
+E:\Test\LZC\kvShop\Common\obj\Debug\Common.pdb

@@ -9,6 +9,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 public partial class Login_aa : System.Web.UI.Page
 {
@@ -30,12 +31,12 @@ public partial class Login_aa : System.Web.UI.Page
         mod.email = email;
         mod.pwd = pwd;
 
-        BLL.user bll = new BLL.user();
-        SqlDataReader  dr = bll.login(mod);
+        BLL.userBLL bll = new BLL.userBLL();
+        MySqlDataReader  dr = bll.login(mod);
         //ds.Tables[0].Rows[0]["_userid"];
         if (CheckBox1.Checked)
         {
-            SqlDataReader dr1 = bll.lo(mod);
+            MySqlDataReader dr1 = bll.lo(mod);
             if (dr1.Read())
             {
                 Session["_username"] = dr1["_username"].ToString();
@@ -65,9 +66,9 @@ public partial class Login_aa : System.Web.UI.Page
                     Model.user mol = new Model.user();
                     mol.userid = Convert.ToInt32(Session["_userid"]);
                    
-                    BLL.user bllu = new BLL.user();
+                    BLL.userBLL bllu = new BLL.userBLL();
                     int r = bllu.update(mol);
-                    SqlDataReader dr2 = bll.lo(mod);
+                    MySqlDataReader dr2 = bll.lo(mod);
                     if (dr2.Read())
                     {
                         Session["_username"] = dr2["_username"].ToString();

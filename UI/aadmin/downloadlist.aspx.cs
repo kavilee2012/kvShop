@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
 using System.IO;
+using MySql.Data.MySqlClient;
 public partial class admin_downlist : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -75,8 +76,8 @@ public partial class admin_downlist : System.Web.UI.Page
             if (cb.Checked)
             {
                 md.id = Convert.ToInt32(GridView1.DataKeys[i].Value);
-                
-                SqlDataReader sdr = bd.datareader(md);
+
+                MySqlDataReader sdr = bd.datareader(md);
                 if (sdr.Read())
                 {
                      str = sdr["_uploadurl"].ToString();

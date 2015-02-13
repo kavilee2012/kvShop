@@ -11,6 +11,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
 using BLL;
 using Model;
+using MySql.Data.MySqlClient;
 public partial class cjwt : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -35,7 +36,7 @@ public partial class cjwt : System.Web.UI.Page
        Model.Helpcate helpcate=new Model.Helpcate();
         helpcate.ID=id;
 
-        SqlDataReader sdr = bllhelpcate.sqldatareader(helpcate);
+        MySqlDataReader sdr = bllhelpcate.sqldatareader(helpcate);
         if (sdr.Read())
         {
             Page.Title = sdr["_catename"].ToString();

@@ -9,6 +9,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 public partial class ProInfo : System.Web.UI.Page
 {
@@ -28,7 +29,7 @@ public partial class ProInfo : System.Web.UI.Page
             Model.product mypro = new Model.product();
             mypro.id = Convert.ToInt32(Request.QueryString["uid"].ToString());
             BLL.BLLshoplist blll = new BLL.BLLshoplist();
-            SqlDataReader dr = blll.readpro(mypro);
+            MySqlDataReader dr = blll.readpro(mypro);
             DataTable dt;
             if (Session["dt"] == null)
             {

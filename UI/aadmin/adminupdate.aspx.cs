@@ -13,6 +13,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
 using Model;
 using BLL;
+using MySql.Data.MySqlClient;
 public partial class admin_addupdate : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -24,7 +25,7 @@ public partial class admin_addupdate : System.Web.UI.Page
             admin1.id = Convert.ToInt32(Request.QueryString["id"]);
 
             BLLadmin blladmin = new BLLadmin();
-            SqlDataReader sdr = blladmin.readAdmin(admin1);
+            MySqlDataReader sdr = blladmin.readAdmin(admin1);
             if (sdr.Read())
             {
                 int i = Convert.ToInt32(sdr["_id"].ToString());

@@ -13,6 +13,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
 using Model;
 using BLL;
+using MySql.Data.MySqlClient;
 public partial class adminlogin : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -27,7 +28,7 @@ public partial class adminlogin : System.Web.UI.Page
         admin1.pwd = txt_pwd.Text;
         admin1.role = Convert.ToInt32(DropDownList1.SelectedValue);
         BLLadmin blladmin = new BLLadmin();
-        SqlDataReader sdr = blladmin._login(admin1);
+        MySqlDataReader sdr = blladmin._login(admin1);
         if (sdr.Read())
         {
             HttpCookie mycookie = new HttpCookie("login");

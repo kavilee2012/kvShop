@@ -72,7 +72,7 @@ public partial class admin_procatelist : System.Web.UI.Page
     }
     public void msg(string msg)
     {
-        BLL.tis myb = new BLL.tis();
+        BLL.tisBLL myb = new BLL.tisBLL();
         myb.msg(Page, msg);
     }
     protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)

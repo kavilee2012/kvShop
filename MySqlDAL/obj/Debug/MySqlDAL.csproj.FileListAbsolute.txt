@@ -1,0 +1,9 @@
+E:\Test\LZC\kvShop\MySqlDAL\obj\Debug\ResolveAssemblyReference.cache
+E:\Test\LZC\kvShop\MySqlDAL\bin\Debug\MySqlDAL.dll
+E:\Test\LZC\kvShop\MySqlDAL\bin\Debug\MySqlDAL.pdb
+E:\Test\LZC\kvShop\MySqlDAL\bin\Debug\Common.dll
+E:\Test\LZC\kvShop\MySqlDAL\bin\Debug\Model.dll
+E:\Test\LZC\kvShop\MySqlDAL\bin\Debug\Model.pdb
+E:\Test\LZC\kvShop\MySqlDAL\bin\Debug\Common.pdb
+E:\Test\LZC\kvShop\MySqlDAL\obj\Debug\MySqlDAL.dll
+E:\Test\LZC\kvShop\MySqlDAL\obj\Debug\MySqlDAL.pdb

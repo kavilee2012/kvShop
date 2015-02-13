@@ -33,3 +33,8 @@ E:\KaviShop\SimpleMall\Model\bin\Debug\Model.pdb
 E:\KaviShop\SimpleMall\Model\obj\Debug\ResolveAssemblyReference.cache
 E:\KaviShop\SimpleMall\Model\obj\Debug\Model.dll
 E:\KaviShop\SimpleMall\Model\obj\Debug\Model.pdb
+E:\Test\LZC\kvShop\Model\bin\Debug\Model.dll
+E:\Test\LZC\kvShop\Model\bin\Debug\Model.pdb
+E:\Test\LZC\kvShop\Model\obj\Debug\ResolveAssemblyReference.cache
+E:\Test\LZC\kvShop\Model\obj\Debug\Model.dll
+E:\Test\LZC\kvShop\Model\obj\Debug\Model.pdb

@@ -13,6 +13,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
 using BLL;
 using Model;
+using MySql.Data.MySqlClient;
 public partial class admin_helpupdate : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -23,7 +24,7 @@ public partial class admin_helpupdate : System.Web.UI.Page
             help.ID = Convert.ToInt32(Request.QueryString["id"]);
 
             BLLhelp bllhelp = new BLLhelp();
-            SqlDataReader sdr = bllhelp.readinfo(help);
+            MySqlDataReader sdr = bllhelp.readinfo(help);
             if (sdr.Read())
             {
                 Label1.Text = sdr["_id"].ToString();

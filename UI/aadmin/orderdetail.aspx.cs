@@ -11,6 +11,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 public partial class admin_orderdetail : System.Web.UI.Page
 {
@@ -33,7 +34,7 @@ public partial class admin_orderdetail : System.Web.UI.Page
         Model.order myorder = new Model.order();
         myorder.id = Convert.ToInt32(Request.QueryString["id"]);
         BLL.BLLorderupdate blll = new BLL.BLLorderupdate();
-        SqlDataReader dr = blll.readorder(myorder);
+        MySqlDataReader dr = blll.readorder(myorder);
         if (dr.Read())
         {
             proid.Text = dr["_id"].ToString();

@@ -9,6 +9,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 public partial class Register : System.Web.UI.Page
 {
@@ -37,9 +38,9 @@ public partial class Register : System.Web.UI.Page
         {
             Model.user mod = new Model.user();
             mod.email = TextBox7.Text;
-            BLL.user bk = new BLL.user();
+            BLL.userBLL bk = new BLL.userBLL();
 
-            SqlDataReader dr = bk.pp(mod);
+            MySqlDataReader dr = bk.pp(mod);
 
             if (dr != null)
             {
@@ -64,15 +65,15 @@ public partial class Register : System.Web.UI.Page
                     mo.safequestion = Server.HtmlEncode(TextBox4.Text);
                     mo.safepwd = Server.HtmlEncode(TextBox5.Text);
 
-                    BLL.user bll = new BLL.user();
+                    BLL.userBLL bll = new BLL.userBLL();
                     int i = bll.insert(mo);
                     if (i > 0)
                     {
                         Common.MessageAlert.AlertLocation(Page, "alert('注册成功');location.href='Login.aspx'");
                         Model.user mod1 = new Model.user();
                         mod1.email = TextBox7.Text;
-                        BLL.user blluser = new BLL.user();
-                        SqlDataReader dr1 = blluser.drid(mod1);
+                        BLL.userBLL blluser = new BLL.userBLL();
+                        MySqlDataReader dr1 = blluser.drid(mod1);
                         if (dr1.Read())
                         {
                             Session["_userid"] = dr1["_userid"].ToString();

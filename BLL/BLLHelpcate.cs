@@ -4,31 +4,33 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using MySqlDAL;
+using MySql.Data.MySqlClient;
 namespace BLL
 {
    public class BLLHelpcate
     {
        public int insert(Model.Helpcate mh)
        {
-           DAL.DALHelpcate dh = new DAL.DALHelpcate();
+           DALHelpcateDAL dh = new DALHelpcateDAL();
            int result = dh.insert(mh);
            return result;
        }
-       public SqlDataReader sqldatareader(Model.Helpcate mh)
+       public MySqlDataReader sqldatareader(Model.Helpcate mh)
        {
-           DAL.DALHelpcate dh = new DAL.DALHelpcate();
-           SqlDataReader sdr = dh.sqldatareader(mh);
+           DALHelpcateDAL dh = new DALHelpcateDAL();
+           MySqlDataReader sdr = dh.mySqlDataReader(mh);
            return sdr;
        }
        public int _delete(Model.Helpcate mh)
        {
-           DAL.DALHelpcate dh = new DAL.DALHelpcate();
+           DALHelpcateDAL dh = new DALHelpcateDAL();
            int result = dh._delete(mh);
            return result;
        }
        public int update(Model.Helpcate mh)
        {
-           DAL.DALHelpcate dh = new DAL.DALHelpcate();
+           DALHelpcateDAL dh = new DALHelpcateDAL();
            int result = dh.update(mh);
            return result;
       }
@@ -36,13 +38,13 @@ namespace BLL
        public DataSet select()
        {
 
-           DAL.DALHelpcate dh = new DAL.DALHelpcate();
+           DALHelpcateDAL dh = new DALHelpcateDAL();
            return dh.select();
        }
 
        public DataSet select(int cateid)
        {
-           DAL.DALHelpcate dh = new DAL.DALHelpcate();
+           DALHelpcateDAL dh = new DALHelpcateDAL();
            return dh.select(cateid);
        }
     }

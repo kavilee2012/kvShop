@@ -12,6 +12,7 @@ using System.Web.UI.WebControls.WebParts;
 
 using Common;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 public partial class admin_newsupdate : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -24,7 +25,7 @@ public partial class admin_newsupdate : System.Web.UI.Page
             Model.News mn = new Model.News();
             mn.ID = Convert.ToInt32(Request.QueryString["uid"]);
             BLL.News bn = new BLL.News();
-            SqlDataReader sdr = bn.datareader(mn);
+            MySqlDataReader sdr = bn.datareader(mn);
             if (sdr.Read())
             {
                 _title.Text = sdr["_title"].ToString();

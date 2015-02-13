@@ -59,3 +59,12 @@ E:\KaviShop\SimpleMall\DAL\bin\Debug\Common.pdb
 E:\KaviShop\SimpleMall\DAL\obj\Debug\ResolveAssemblyReference.cache
 E:\KaviShop\SimpleMall\DAL\obj\Debug\DAL.dll
 E:\KaviShop\SimpleMall\DAL\obj\Debug\DAL.pdb
+E:\Test\LZC\kvShop\DAL\bin\Debug\DAL.dll
+E:\Test\LZC\kvShop\DAL\bin\Debug\DAL.pdb
+E:\Test\LZC\kvShop\DAL\bin\Debug\Common.dll
+E:\Test\LZC\kvShop\DAL\bin\Debug\Model.dll
+E:\Test\LZC\kvShop\DAL\bin\Debug\Model.pdb
+E:\Test\LZC\kvShop\DAL\bin\Debug\Common.pdb
+E:\Test\LZC\kvShop\DAL\obj\Debug\ResolveAssemblyReference.cache
+E:\Test\LZC\kvShop\DAL\obj\Debug\DAL.dll
+E:\Test\LZC\kvShop\DAL\obj\Debug\DAL.pdb

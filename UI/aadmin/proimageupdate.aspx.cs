@@ -12,6 +12,7 @@ using System.Web.UI.WebControls.WebParts;
 
 using System.Data.SqlClient;
 using System.IO;
+using MySql.Data.MySqlClient;
 
 
 public partial class admin_proimageupdate : System.Web.UI.Page
@@ -23,7 +24,7 @@ public partial class admin_proimageupdate : System.Web.UI.Page
             u_sizeid.Text = Request.QueryString["sizeid"].ToString();
 
             BLL.proimage b_image = new BLL.proimage();
-            SqlDataReader dr = b_image.image_update(u_sizeid.Text);
+            MySqlDataReader dr = b_image.image_update(u_sizeid.Text);
             dr.Read();
             image_url.Text = dr["_imageurl"].ToString();
             Image1.ImageUrl = "~/" + image_url.Text;
@@ -36,7 +37,7 @@ public partial class admin_proimageupdate : System.Web.UI.Page
     }
     public void msg(string msg)
     {
-        BLL.tis myb = new BLL.tis();
+        BLL.tisBLL myb = new BLL.tisBLL();
         myb.msg(Page, msg);
     }
     public void sbing()

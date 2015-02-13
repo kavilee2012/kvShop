@@ -4,74 +4,76 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
+using MySqlDAL;
 
 namespace BLL
 {
-    public  class user
+    public  class userBLL
     {
-        public SqlDataReader  login(Model.user aa)
+        public MySqlDataReader  login(Model.user aa)
         {
-            DAL.user dalus = new DAL.user();
+            userDAL dalus = new userDAL();
             return dalus.login(aa); 
         }
-        public SqlDataReader lo(Model.user aa)
+        public MySqlDataReader lo(Model.user aa)
         {
-            DAL.user da = new DAL.user();
+            userDAL da = new userDAL();
             return da.lo(aa);
         }
         public int insert(Model.user aa)
         {
-            DAL.user dalu = new DAL.user();
+            userDAL dalu = new userDAL();
             return dalu.insert(aa);
         }
         public DataSet  pan(Model.user aa)
         {
-            DAL.user daluss = new DAL.user();
+            userDAL daluss = new userDAL();
             return daluss.pan(aa);
         }
-        public SqlDataReader pp(Model.user aa)
+        public MySqlDataReader pp(Model.user aa)
         {
-            DAL.user dal = new DAL.user();
+            userDAL dal = new userDAL();
             return dal.dd(aa);
         }
-        public SqlDataReader drs(Model.user aa)
+        public MySqlDataReader drs(Model.user aa)
         {
-            DAL.user dsd = new DAL.user();
+            userDAL dsd = new userDAL();
             return dsd.drs(aa);
         }
         public int upus(Model.user aa)
         {
-            DAL.user ds = new DAL.user();
+            userDAL ds = new userDAL();
             return ds.upd(aa);
         }
         public int upwd(Model.user aa)
         {
-            DAL.user dalll = new DAL.user();
+            userDAL dalll = new userDAL();
             return dalll.upwd(aa);
         }
         public int upad(Model.address aa)
         {
-            DAL.address dala = new DAL.address();
+            address dala = new address();
             return dala.insert(aa);
         }
-        public SqlDataReader drid(Model.user aa)
+        public MySqlDataReader drid(Model.user aa)
         {
-            DAL.user da = new DAL.user();
+            userDAL da = new userDAL();
             return da.drid(aa);
         }
-        public SqlDataReader drp(Model.user aa)
+        public MySqlDataReader drp(Model.user aa)
         {
-            DAL.user dals = new DAL.user();
+            userDAL dals = new userDAL();
             return dals.drpw(aa);
         }
         public int update(Model.user aa)
         {
-            DAL.user dalu = new DAL.user();
+            userDAL dalu = new userDAL();
             return dalu.update(aa);
         }
-        public SqlDataReader drti(Model.user aa)
+        public MySqlDataReader drti(Model.user aa)
         {
-            DAL.user ds = new DAL.user();
+            userDAL ds = new userDAL();
             return ds.drti(aa);
         }
 
@@ -80,12 +82,12 @@ namespace BLL
     {
         public DataSet dspor(int a,int b,Model.order aa)
         {
-            DAL.order dalo = new DAL.order();
+            order dalo = new order();
             return dalo.dsor(a,b,aa);
         }
         public DataSet dspor1(Model.order aa)
         {
-            DAL.order dal = new DAL.order();
+            order dal = new order();
             return dal.dsmai(aa);
         }
         //查看某条订单
@@ -101,19 +103,19 @@ namespace BLL
         //    return dalorr.countcha(aa);
         //}
 
-        //public SqlDataReader dror(Model.order aa)
+        //public MySqlDataReader dror(Model.order aa)
         //{
         //    DAL.order daorde = new DAL.order();
         //    return daorde.drorf(aa);
         //}
         public int deor(Model.order aa)
         {
-            DAL.order deo = new DAL.order();
+            order deo = new order();
             return deo.deo(aa);
         }
         public int count(Model.order aa)
         {
-            DAL.order dalk = new DAL.order();
+            order dalk = new order();
             return dalk.coun(aa);
         }
 

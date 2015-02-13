@@ -34,7 +34,7 @@ public partial class admin_proupdate : System.Web.UI.Page
 
     public void msg(string msg)
     {
-        BLL.tis myb = new BLL.tis();
+        BLL.tisBLL myb = new BLL.tisBLL();
         myb.msg(Page, msg);
     }
     protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)

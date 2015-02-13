@@ -9,6 +9,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 public partial class ACIndex : System.Web.UI.Page
 {
@@ -24,8 +25,8 @@ public partial class ACIndex : System.Web.UI.Page
 
             Model.user mol = new  Model.user ();
             mol.userid = Convert.ToInt32(Session["_userid"]);
-            BLL.user bls = new BLL.user();
-            SqlDataReader dr = bls.drti(mol);
+            BLL.userBLL bls = new BLL.userBLL();
+            MySqlDataReader dr = bls.drti(mol);
             if (dr.Read())
             {
                 Label2.Text = dr["_logintime"].ToString();
@@ -34,7 +35,7 @@ public partial class ACIndex : System.Web.UI.Page
             Model.user mod = new Model.user();
             mod.userid = Convert.ToInt32(Session["_userid"]);
             mod.time = dt;
-            BLL.user blur = new BLL.user();
+            BLL.userBLL blur = new BLL.userBLL();
             int i = blur.update(mod);
         }
 

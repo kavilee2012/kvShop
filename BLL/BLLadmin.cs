@@ -5,79 +5,80 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using Model;
-using DAL;
+using MySqlDAL;
+using MySql.Data.MySqlClient;
 namespace BLL
 {
     public class BLLadmin
     {
-        public SqlDataReader checkAdmin(admin admin)
+        public MySqlDataReader checkAdmin(admin admin)
         {
-            DALadmin daladmin = new DALadmin();
-            return daladmin.checkAdmin(admin);
+            DALadminDAL DALadminDAL = new DALadminDAL();
+            return DALadminDAL.checkAdmin(admin);
         }
 
         public int insertAdmin(admin admin)
         {
-            DALadmin daladmin = new DALadmin();
-            return daladmin.insertAdmin(admin);
+            DALadminDAL DALadminDAL = new DALadminDAL();
+            return DALadminDAL.insertAdmin(admin);
         }
         public int deleteAdmin(admin admin)
         {
-            DALadmin daladmin = new DALadmin();
-            return daladmin.deleteAdmin(admin);
+            DALadminDAL DALadminDAL = new DALadminDAL();
+            return DALadminDAL.deleteAdmin(admin);
         }
 
         public DataSet selectAdmin(int pageindex, int pagesize, string table)
         {
-            DALadmin daladmin = new DALadmin();
-            return daladmin.selectAdmin();
+            DALadminDAL DALadminDAL = new DALadminDAL();
+            return DALadminDAL.selectAdmin();
         }
         public int updateAdmin(admin admin)
         {
-            DALadmin daladmin = new DALadmin();
-            return daladmin.updateAdmin(admin);
+            DALadminDAL DALadminDAL = new DALadminDAL();
+            return DALadminDAL.updateAdmin(admin);
         }
-        public SqlDataReader readAdmin(admin admin)
+        public MySqlDataReader readAdmin(admin admin)
         {
-            DALadmin daladmin = new DALadmin();
-            return daladmin.readAdmin(admin);
+            DALadminDAL DALadminDAL = new DALadminDAL();
+            return DALadminDAL.readAdmin(admin);
 
         }
-        public SqlDataReader _login(admin admin)
+        public MySqlDataReader _login(admin admin)
         {
-            DALadmin daladmin = new DALadmin();
-            return daladmin._login(admin);
+            DALadminDAL DALadminDAL = new DALadminDAL();
+            return DALadminDAL._login(admin);
         }
         //public DataSet searchAdmin(admin admin)
         //{
-        //    DALadmin daladmin = new DALadmin();
-        //    return daladmin.searchAdmin(admin);
+        //    DALadminDAL DALadminDAL = new DALadminDAL();
+        //    return DALadminDAL.searchAdmin(admin);
         //}
 
         public DataSet adminlist(int pageindex, int pagesize, string table)
         {
-            DALadmin daladmin = new DALadmin();
-            DataSet ds = daladmin.adminlist(pageindex, pagesize, table);
+            DALadminDAL DALadminDAL = new DALadminDAL();
+            DataSet ds = DALadminDAL.adminlist(pageindex, pagesize, table);
             return ds;
         }
 
         public int admin()
         {
-            DALadmin daladmin = new DALadmin();
-            return daladmin.admin();
+            DALadminDAL DALadminDAL = new DALadminDAL();
+            return DALadminDAL.admin();
         }
 
         public int s_admin(string name)
         {
-            DALadmin daladmin = new DALadmin();
-            return daladmin.s_admin(name);
+            DALadminDAL DALadminDAL = new DALadminDAL();
+            return DALadminDAL.s_admin(name);
         
         }
 
         public DataSet S_admin(int pageindex, int pagesize, string table, string name)
         {
-            DALadmin daladmin = new DALadmin();
-            DataSet ds = daladmin.S_admin(pageindex, pagesize, table,name);
+            DALadminDAL DALadminDAL = new DALadminDAL();
+            DataSet ds = DALadminDAL.S_admin(pageindex, pagesize, table,name);
             return ds;
         }
 

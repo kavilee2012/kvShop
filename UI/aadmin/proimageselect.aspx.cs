@@ -12,6 +12,7 @@ using System.Web.UI.WebControls.WebParts;
 
 using System.Data.SqlClient;
 using System.IO;
+using MySql.Data.MySqlClient;
 
 public partial class admin_proimageupdate : System.Web.UI.Page
 {
@@ -57,7 +58,7 @@ public partial class admin_proimageupdate : System.Web.UI.Page
     }   
     public void msg(string msg)
     {
-        BLL.tis myb = new BLL.tis();
+        BLL.tisBLL myb = new BLL.tisBLL();
         myb.msg(Page, msg);
     }
     protected void sc_Command(object sender, CommandEventArgs e)
@@ -67,7 +68,7 @@ public partial class admin_proimageupdate : System.Web.UI.Page
         BLL.size bsize = new BLL.size();
         int result = bsize.delete(size_id); 
         BLL.proimage myb = new BLL.proimage();
-        SqlDataReader dr = myb.s_imageurl(size_id);
+        MySqlDataReader dr = myb.s_imageurl(size_id);
         BLL.proimage isize = new BLL.proimage();
         int i_result = isize.delete_1(size_id);
 

@@ -9,6 +9,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 public partial class PersonalInfo : System.Web.UI.Page
 {
@@ -30,8 +31,8 @@ public partial class PersonalInfo : System.Web.UI.Page
     {
         Model.user mod = new Model.user();
         mod.userid = Convert.ToInt32(Session["_userid"]);
-        BLL.user bll = new BLL.user();
-        SqlDataReader dr = bll.drs(mod);
+        BLL.userBLL bll = new BLL.userBLL();
+        MySqlDataReader dr = bll.drs(mod);
         if(dr!=null)
         {
             if (dr.Read())
@@ -54,7 +55,7 @@ public partial class PersonalInfo : System.Web.UI.Page
         mo.qq =Server.HtmlEncode(TextBox6.Text);
         mo.safequestion =Server.HtmlEncode(TextBox1.Text);
         mo.safepwd =Server.HtmlEncode(TextBox2.Text);
-        BLL.user bllu = new BLL.user();
+        BLL.userBLL bllu = new BLL.userBLL();
         int i = bllu.upus(mo);
         if (i > 0)
         {
@@ -83,15 +84,15 @@ public partial class PersonalInfo : System.Web.UI.Page
             Model.user mos = new Model.user();
             mos.userid = Convert.ToInt32(Session["_userid"]);
             mos.pwd = TextBox7.Text;
-            BLL.user blus = new BLL.user();
-            SqlDataReader dr = blus.drp(mos);
+            BLL.userBLL blus = new BLL.userBLL();
+            MySqlDataReader dr = blus.drp(mos);
             if (dr.Read())
             {
 
                 Model.user mod = new Model.user();
                 mod.userid = Convert.ToInt32(Session["_userid"]);
                 mod.pwd = Server.HtmlEncode(TextBox9.Text);
-                BLL.user bllu = new BLL.user();
+                BLL.userBLL bllu = new BLL.userBLL();
                 int i = bllu.upwd(mod);
                 if (i > 0)
                 {

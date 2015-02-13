@@ -4,40 +4,42 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data ;
 using System.Data.SqlClient;
+using MySqlDAL;
+using MySql.Data.MySqlClient;
 
 namespace BLL
 {
    public  class daladdress
     {
-       public SqlDataReader drad(Model.address aa)
+       public MySqlDataReader drad(Model.address aa)
        {
-           DAL.daladdress dll = new  DAL.daladdress ();
+           dalaaddressDAL dll = new  dalaaddressDAL ();
            return dll.drad(aa);
        }
        public int upad(Model.address aa)
        {
-           DAL.daladdress ad = new  DAL.daladdress ();
+           dalaaddressDAL ad = new  dalaaddressDAL ();
            return ad.upad(aa);
            
        }
        public int upada(Model.address aa)
        {
-           DAL.address dala = new DAL.address();
+           address dala = new address();
            return dala.insert(aa);
        }
        public int addre(Model.address aa)
        {
-           DAL.daladdress dal = new  DAL.daladdress ();
+           dalaaddressDAL dal = new  dalaaddressDAL ();
            return dal.addre(aa);
        }
        public int inserid(Model.address aa)
        {
-           DAL.daladdress daa = new DAL.daladdress();
+           dalaaddressDAL daa = new dalaaddressDAL();
            return daa.insert(aa);
        }
-       public SqlDataReader dra(Model.address aa)
+       public MySqlDataReader dra(Model.address aa)
        {
-           DAL.daladdress dsa = new DAL.daladdress();
+           dalaaddressDAL dsa = new dalaaddressDAL();
            return dsa.adr(aa);
        }
     }

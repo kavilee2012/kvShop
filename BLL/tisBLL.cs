@@ -6,11 +6,11 @@ using System.Text;
 
 namespace BLL
 {
-   public  class tis
+   public  class tisBLL
    {
        public void msg(System.Web.UI.Page page, string msg)
        {
-           DAL.tis dal = new DAL.tis();
+           MySqlDAL.tisDAL dal = new MySqlDAL.tisDAL();
           dal.msg(page, msg);
        }
     }
